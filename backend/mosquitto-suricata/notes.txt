@@ -1,0 +1,11 @@
+curl -A "BlackSun" www.google.com
+curl --max-time 5 http://testmynids.org/uid/index.html
+
+
+cat /var/log/suricata/eve.json | jq 'select(.event_type=="alert")'
+
+
+## used images
+
+https://github.com/vvatelot/mosquitto-docker-compose
+https://github.com/julienyvenat/docker-suricata/tree/master

@@ -1,0 +1,3 @@
+alert tcp $HOME_NET any -> any 1883 (msg:"Sensible topic alert"; mqtt.publish.topic; content:"sensible"; classtype:sensible-topic; sid:10; rev:3;)
+
+

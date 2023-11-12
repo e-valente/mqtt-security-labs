@@ -1,0 +1,1 @@
+drop tcp $HOME_NET any <> any 1883 (msg:"Command & Control DROP - send command to victim"; mqtt.publish.topic; content:"malware/input/"; startswith; classtype:c2; sid:101; rev:1;)

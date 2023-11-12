@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    #volumes:
+    #  - ./nginx-config:/etc/nginx
+    networks:
+      mynetwork:
+        ipv4_address: 172.21.0.2
+
+  suricata:
+    #image: jasonish/suricata
+    volumes:
+      - ./suricata-config:/etc/suricata
+    networks:
+      mynetwork:
+        ipv4_address: 172.21.0.3
+    depends_on:
+      - nginx
+
+networks:
+  mynetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.0.0/16

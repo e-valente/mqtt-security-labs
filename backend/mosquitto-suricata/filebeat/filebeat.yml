@@ -1,0 +1,9 @@
+filebeat.inputs:
+- type: filestream
+  id: my-application-logs
+  enabled: true
+  paths:
+    - /var/log/suricata/*.log
+
+output.elasticsearch:
+  hosts: '${ELASTICSEARCH_HOSTS:elasticsearch:9200}'

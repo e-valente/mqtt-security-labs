@@ -1,0 +1,2 @@
+alert tcp $HOME_NET any -> any 1883 (msg:"AUTH MQTT Credentials Brute Force by username - Alert"; mqtt.connect.username; pcre:"/^.*/"; flow:to_server; threshold: type both, track by_dst, count 500, seconds 60; classtype:brute-force; sid:30; rev:3;)
+alert tcp $HOME_NET any -> any 1883 (msg:"AUTH MQTT Credentials Brute Force by password - Alert"; mqtt.connect.password; pcre:"/^.*/"; flow:to_server; threshold: type both, track by_dst, count 5, seconds 60; classtype:brute-force; sid:31; rev:4;)
