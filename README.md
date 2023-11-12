@@ -3,12 +3,6 @@
 Welcome to MQTT-Security-Labs, a hands-on training platform designed to enhance understanding and awareness of security vulnerabilities within MQTT protocols and brokers. This repository includes practical exercises and simulations for four common MQTT attack scenarios.
 
 <p align="center" width="100%">
-    <img width="20%" src="doc/img/repo-logo-small.png">
-</p>
-
-## Architecture components
-
-<p align="center" width="100%">
     <img width="800%" src="doc/img/mqtt-security-labs-v1.png">
 </p>
 
