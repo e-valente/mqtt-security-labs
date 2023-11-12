@@ -6,7 +6,15 @@ Welcome to MQTT-Security-Labs, a hands-on training platform designed to enhance 
     <img width="20%" src="doc/img/repo-logo-small.png">
 </p>
 
+## Architecture components
+
+<p align="center" width="100%">
+    <img width="800%" src="doc/img/mqtt-security-labs-v1.png">
+</p>
+
 ## Attack Scenarios
+
+
 
 1. **Sensible Topic Subscribing and Publishing**
    - This scenario demonstrates how attackers can subscribe to sensitive topics to intercept confidential data or publish malicious data.
