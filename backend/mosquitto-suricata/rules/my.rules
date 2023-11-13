@@ -1,1 +1,1 @@
-alert tcp $HOME_NET any -> any 1883 (msg:"Sensible topic alert"; mqtt.publish.topic; content:"sensible"; classtype:sensible-topic; sid:10; rev:3;)
+drop tcp $HOME_NET any -> any 1883 (msg:"Information Grabber drop - Grab version"; mqtt.subscribe.topic; content:"SYS/broker/version"; endswith; classtype:information-grabber; sid:20; rev:1;)

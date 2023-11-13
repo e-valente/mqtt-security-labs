@@ -14,7 +14,7 @@ git clone git@github.com:e-valente/mqtt-security-labs.git
 ## 2 Build & Start Backend
 
 ```sh
-cd backend\mosquitto-suricata
+cd backend/mosquitto-suricata
 docker-compose build
 docker-compose up
 ```
@@ -40,7 +40,7 @@ mosquitto_pub  -t 'sensible' -m "Testing sensible"  -u client1 -P Tijolo200!
 Make sure the backend is stopped:
 
 ```sh
-cd backend\mosquitto-suricata
+cd backend/mosquitto-suricata
 docker-compose stop  # or ctrl + c on previous step terminal
 ```
 
@@ -56,7 +56,7 @@ alert tcp $HOME_NET any -> any 1883 (msg:"Sensible topic alert"; mqtt.publish.to
 ### 4.2 Start Backend
 
 ```sh
-cd backend\mosquitto-suricata
+cd backend/mosquitto-suricata
 docker-compose up
 ```
 
@@ -99,7 +99,7 @@ After publishing, we'll see in terminal 3 (suricata terminal) the following aler
 Make sure the backend is stopped:
 
 ```sh
-cd backend\mosquitto-suricata
+cd backend/mosquitto-suricata
 docker-compose stop  # or ctrl + c on previous step terminal
 ```
 
@@ -115,7 +115,7 @@ drop tcp $HOME_NET any -> any 1883 (msg:"Sensible topic preventing"; mqtt.publis
 ### 5.2 Start Backend
 
 ```sh
-cd backend\mosquitto-suricata
+cd backend/mosquitto-suricata
 docker-compose up
 ```
 
