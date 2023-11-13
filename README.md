@@ -8,19 +8,21 @@ Welcome to MQTT-Security-Labs, a hands-on training platform designed to enhance 
 
 ## Attack Scenarios
 
-
-
 1. **Sensible Topic Subscribing and Publishing**
    - This scenario demonstrates how attackers can subscribe to sensitive topics to intercept confidential data or publish malicious data.
+   - Lab 1: available at [labs/sensible-topics/README.md)](./labs/sensible-topics/README.md).
 
 2. **Information Grabber from Broker**
    - Explore how attackers can exploit vulnerabilities in MQTT brokers to extract sensitive information, compromising data privacy and integrity.
+   - Lab 2: available at [/labs/info-grabber/README.md](./labs/info-grabber/README.md).
 
 3. **Credentials Brute Force on Broker Topics**
    - This lab shows how attackers can perform brute force attacks to crack usernames and passwords, gaining unauthorized access to MQTT topics.
+   - Lab 3: TBA.
 
 4. **Command and Control from Vulnerable Brokers**
    - Learn how compromised MQTT brokers can be used for command and control operations, leading to unauthorized control and manipulation of IoT devices.
+   - Lab 4: TBA.
 
 ## Getting Started
 
