@@ -1921,10 +1921,11 @@ napatech:
 default-rule-path: /var/lib/suricata/rules
 
 rule-files:
-  - sensible-topic.rules
-  - information-grabber.rules
-  - bruteforce.rules
-  - c2.rules 
+  - my.rules 
+ # - sensible-topic.rules
+ # - information-grabber.rules
+ # - bruteforce.rules
+ # - c2.rules 
 
 ##
 ## Auxiliary configuration files.

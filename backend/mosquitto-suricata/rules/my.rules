@@ -1,10 +1,1 @@
-alert icmp $HOME_NET any -> 8.8.8.8 any (msg:"TEST ping google"; classtype:not-suspicious; sid:1; rev:1;)
-alert tcp $EXTERNAL_NET any -> any 3000 (msg:"TEST External 3000"; classtype:not-suspicious; sid:2; rev:2;)
-alert tcp $HOME_NET any -> any 3000 (msg:"TEST Home 3000"; classtype:not-suspicious; sid:3; rev:3;)
-alert tcp $HOME_NET any -> any 9000 (msg:"TEST Home 9000"; classtype:not-suspicious; sid:4; rev:4;)
-alert tcp $HOME_NET any -> any 1883 (msg:"MQTT DoS, Potential DOS"; flow:to_server; flags: S,12; threshold: type both, track by_dst, count 5, seconds 360; classtype:misc-activity; sid:6;)
-alert tcp $HOME_NET any -> any 1883 (msg:"TOPIC test"; mqtt.publish.topic; content:"mytopic"; classtype:not-suspicious; sid:30; rev:3;)
-drop tcp $HOME_NET any -> any 1883 (msg:"AUTH MQTT Admin attempt"; mqtt.connect.username; content:"admin"; classtype:not-suspicious; sid:31; rev:3;)
-drop tcp $HOME_NET any -> any 1883 (msg:"AUTH MQTT Brute Force"; mqtt.connect.username; pcre:"/^.*/"; flow:to_server; threshold: type both, track by_dst, count 5, seconds 360; classtype:not-suspicious; sid:39; rev:3;)
-
-
+alert tcp $HOME_NET any -> any 1883 (msg:"Sensible topic alert"; mqtt.publish.topic; content:"sensible"; classtype:sensible-topic; sid:10; rev:3;)
