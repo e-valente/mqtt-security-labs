@@ -2,10 +2,8 @@ version: '3.5'
 services:
 
   suricata:
-    #build: ./${OS_SURICATA}/Dockerfile/
-    build: ./alpine/Dockerfile/
-    #image: jasonish/suricata:latest
-    container_name: suricata
+    image: eevalente/mosquitto-suricata
+    container_name: mosquitto-suricata
     tty: true
     stdin_open: true
     privileged: true
@@ -29,9 +27,7 @@ services:
     # command: -i eth0
     command: -q 0
     ports:
-      - 3000:3000
       - 1883:1883
-      - 9000:9000
     networks:
       mynetwork:
         ipv4_address: 172.21.0.2
