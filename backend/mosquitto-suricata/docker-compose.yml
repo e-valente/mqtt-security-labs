@@ -1,8 +1,7 @@
 version: '3.5'
 services:
-
   suricata:
-    image: eevalente/mosquitto-suricata
+    image: eevalente/mosquitto-suricata:1.0.0
     container_name: mosquitto-suricata
     tty: true
     stdin_open: true
@@ -11,20 +10,14 @@ services:
       - NET_ADMIN
       - NET_RAW  
     volumes:
-      - ./alpine/Dockerfile/suricata.yaml:/etc/suricata/suricata.yaml
-      - ./alpine/Dockerfile/classification.config:/etc/suricata/classification.config
+      - ./suricata-files/suricata.yaml:/etc/suricata/suricata.yaml
+      - ./suricata-files/classification.config:/etc/suricata/classification.config
+      - ./suricata-files/rules/my.rules:/var/lib/suricata/rules/my.rules
       - /var/log/suricata:/var/log/suricata
-      - ./rules/my.rules:/var/lib/suricata/rules/my.rules
-     # - ./rules/sensible-topic.rules:/var/lib/suricata/rules/sensible-topic.rules
-     # - ./rules/information-grabber.rules:/var/lib/suricata/rules/information-grabber.rules
-     # - ./rules/bruteforce.rules:/var/lib/suricata/rules/bruteforce.rules
-     # - ./rules/c2.rules:/var/lib/suricata/rules/c2.rules
-      - ./alpine/Dockerfile/mosquitto.conf:/etc/mosquitto/mosquitto.conf
-      - ./alpine/Dockerfile/password.txt:/etc/mosquitto/password.txt
-      - ./alpine/Dockerfile/password-clear.txt:/etc/mosquitto/password-clear.txt
-     # - ./malware:/tmp/malware
-    #entrypoint: /tmp/docker-entrypoint.sh
-    # command: -i eth0
+      - ./mosquitto-files/mosquitto.conf:/etc/mosquitto/mosquitto.conf
+      - ./mosquitto-files/password.txt:/etc/mosquitto/password.txt
+      - ./mosquitto-files/password-clear.txt:/etc/mosquitto/password-clear.txt
+
     command: -q 0
     ports:
       - 1883:1883
