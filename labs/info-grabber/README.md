@@ -15,7 +15,6 @@ git clone git@github.com:e-valente/mqtt-security-labs.git
 
 ```sh
 cd backend/mosquitto-suricata
-docker-compose build
 docker-compose up
 ```
 
