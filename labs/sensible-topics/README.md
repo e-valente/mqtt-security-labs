@@ -45,7 +45,7 @@ docker-compose stop  # or ctrl + c on previous step terminal
 
 ### 4.1 Configure suricata rule 
 
-Add the following [suricata rule](https://docs.suricata.io/en/suricata-6.0.0/rules/intro.html) to the `backend/mosquitto-suricata/rules/my.rules` file:
+Add the following [suricata rule](https://docs.suricata.io/en/suricata-6.0.0/rules/intro.html) to the `backend/mosquitto-suricata/suricata-files/rules/my.rules` file:
 
 `my.rules`:  
 ```sh
@@ -104,7 +104,7 @@ docker-compose stop  # or ctrl + c on previous step terminal
 
 ### 5.1 Configure suricata rule for dropping the publish messages om this topic
 
-Add the following [suricata rule](https://docs.suricata.io/en/suricata-6.0.0/rules/intro.html) to the `backend/mosquitto-suricata/rules/my.rules` file:
+Add the following [suricata rule](https://docs.suricata.io/en/suricata-6.0.0/rules/intro.html) to the `backend/mosquitto-suricata/suricata-files/rules/my.rules` file:
 
 `my.rules`:  
 ```sh
